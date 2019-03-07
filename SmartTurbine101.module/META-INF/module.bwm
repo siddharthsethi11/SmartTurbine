@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="__1NWwD8MEembBq469JEbBw" targetNamespace="http://tns.tibco.com/bw/composite/SmartTurbine101.module" name="SmartTurbine101.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_tBuNIj8NEembBq469JEbBw" name="dynamicprice_all" promote="ComponentDynamicPriceAll/dynamicprice_all">
+    <sca:interface.wsdl xmi:id="_tBu0MD8NEembBq469JEbBw" interface="http://xmlns.example.com/20190305114047PLT#wsdl.interface(dynamicprice)" scaext:wsdlLocation="../Processes/smartturbine101/module/DynamicPrice_All.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_tBvbQD8NEembBq469JEbBw" name="RestService" path="/dynamicprice" docBasePath="http://localhost:7777/SmartTurbine101.module" docResourcePath="Dynamicprice" basePath="/" connector="smartturbine101.module.Process" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/SmartTurbine_v_101.json">
+      <operation xmi:id="_tBvbQj8NEembBq469JEbBw" operationName="get" nickname="getDynamicprice" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+      </operation>
+      <parameters xmi:id="_tByekD8NEembBq469JEbBw"/>
+      <advancedConfig xmi:id="_tBvbQT8NEembBq469JEbBw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_tBvbQz8NEembBq469JEbBw" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_pcJGMT8QEembBq469JEbBw" name="inventory_all" promote="ComponentInventoryAll/inventory_all">
+    <sca:interface.wsdl xmi:id="_pcJGNT8QEembBq469JEbBw" interface="http://xmlns.example.com/20190305114015#wsdl.interface(inventory)" scaext:wsdlLocation="../Processes/smartturbine101/module/Inventory_All.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_pcMJgD8QEembBq469JEbBw" name="RestService2" path="/inventory" docBasePath="http://localhost:7777/SmartTurbine101.module" docResourcePath="Inventory" basePath="/" connector="smartturbine101.module.Process" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/SmartTurbine_v_101.json">
+      <operation xmi:id="_pcMwkD8QEembBq469JEbBw" operationName="get" nickname="getInventory" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+      </operation>
+      <parameters xmi:id="_pcPM0D8QEembBq469JEbBw"/>
+      <advancedConfig xmi:id="_pcMJgT8QEembBq469JEbBw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_pcMwkT8QEembBq469JEbBw" bindingName="RestService2"/>
+  </sca:service>
+  <sca:service xmi:id="_h5FyMj8VEembBq469JEbBw" name="dynamicprice" promote="ComponentDynamicPriceAll/dynamicprice">
+    <sca:interface.wsdl xmi:id="_h5FyNj8VEembBq469JEbBw" interface="http://xmlns.example.com/20190305114047PLT#wsdl.interface(dynamicprice1)" scaext:wsdlLocation="../Processes/smartturbine101/module/DynamicPrice_All.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_h5GZQD8VEembBq469JEbBw" name="RestService4" path="/dynamicprice/{id}" docBasePath="http://localhost:7777/SmartTurbine101.module" docResourcePath="Dynamicprice" basePath="/" connector="smartturbine101.module.Process" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/SmartTurbine_1.0.1.json">
+      <operation xmi:id="_h5GZQj8VEembBq469JEbBw" operationName="get" nickname="getDynamicprice_id" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+      </operation>
+      <parameters xmi:id="_h5I1gD8VEembBq469JEbBw">
+        <parameterMapping xmi:id="_h5I1gT8VEembBq469JEbBw" parameterName="id" parameterType="Path" dataType="string" required="true" description=""/>
+      </parameters>
+      <advancedConfig xmi:id="_h5GZQT8VEembBq469JEbBw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_h5GZQz8VEembBq469JEbBw" bindingName="RestService4"/>
+  </sca:service>
+  <sca:service xmi:id="_DwzPUj8dEembBq469JEbBw" name="inventory" promote="ComponentInventoryAll/inventory">
+    <sca:interface.wsdl xmi:id="_Dw2SoD8dEembBq469JEbBw" interface="http://xmlns.example.com/20190305114015#wsdl.interface(inventory1)" scaext:wsdlLocation="../Processes/smartturbine101/module/Inventory_All.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_Dw2SoT8dEembBq469JEbBw" name="RestService1" path="/inventory/{id}" docBasePath="http://localhost:7777/SmartTurbine101.module" docResourcePath="Inventory" basePath="/" connector="smartturbine101.module.Process" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/SmartTurbine_1.0.1.json">
+      <operation xmi:id="_Dw2Soz8dEembBq469JEbBw" operationName="get" nickname="getInventory_id" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+      </operation>
+      <parameters xmi:id="_Dw4H0D8dEembBq469JEbBw">
+        <parameterMapping xmi:id="_Dw4H0T8dEembBq469JEbBw" parameterName="id" parameterType="Path" dataType="string" required="true" description=""/>
+      </parameters>
+      <advancedConfig xmi:id="_Dw2Soj8dEembBq469JEbBw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_Dw2SpD8dEembBq469JEbBw" bindingName="RestService1"/>
+  </sca:service>
+  <sca:property xmi:id="_Ae3XwD8NEembBq469JEbBw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_AfEMED8NEembBq469JEbBw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_AfN9ED8NEembBq469JEbBw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_AfXuED8NEembBq469JEbBw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Afg4AD8NEembBq469JEbBw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_AfrQED8NEembBq469JEbBw" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_Af1oID8NEembBq469JEbBw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_WEs3wD8NEembBq469JEbBw" name="ComponentInventoryAll" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_WEs3wT8NEembBq469JEbBw" processName="smartturbine101.module.Inventory_All"/>
+    <sca:service xmi:id="_pcIfID8QEembBq469JEbBw" name="inventory_all">
+      <sca:interface.wsdl xmi:id="_pcJGMD8QEembBq469JEbBw" interface="http://xmlns.example.com/20190305114015#wsdl.interface(inventory)"/>
+    </sca:service>
+    <sca:service xmi:id="_DwzPUD8dEembBq469JEbBw" name="inventory">
+      <sca:interface.wsdl xmi:id="_DwzPUT8dEembBq469JEbBw" interface="http://xmlns.example.com/20190305114015#wsdl.interface(inventory1)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_aua04D8NEembBq469JEbBw" name="ComponentDynamicPriceAll" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_aua04T8NEembBq469JEbBw" processName="smartturbine101.module.DynamicPrice_All"/>
+    <sca:service xmi:id="_tBuNID8NEembBq469JEbBw" name="dynamicprice_all">
+      <sca:interface.wsdl xmi:id="_tBuNIT8NEembBq469JEbBw" interface="http://xmlns.example.com/20190305114047PLT#wsdl.interface(dynamicprice)"/>
+    </sca:service>
+    <sca:service xmi:id="_h5FyMD8VEembBq469JEbBw" name="dynamicprice">
+      <sca:interface.wsdl xmi:id="_h5FyMT8VEembBq469JEbBw" interface="http://xmlns.example.com/20190305114047PLT#wsdl.interface(dynamicprice1)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

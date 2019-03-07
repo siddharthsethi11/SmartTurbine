@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/SmartTurbine101.module/Service Descriptors/SmartTurbine_v_101.json",
+        "conversionType": "generated",
+        "xsdSchemaTargetNamespace": "/T1551766170793Converted/JsonSchema"
+    },
+    {
+        "jsonSchemaLocation": "/SmartTurbine101.module/Service Descriptors/SmartTurbine_1.0.1.json",
+        "conversionType": "generated",
+        "xsdSchemaTargetNamespace": "/T1551769731196Converted/JsonSchema"
+    }
+]}
